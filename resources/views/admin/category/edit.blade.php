@@ -1,5 +1,5 @@
 @extends('adminlayout.master')
-@section('title', 'feature edit')
+@section('title', 'category edit')
 
 @section('content')
 
@@ -12,23 +12,22 @@
 
 
 
-    <form class="row gy-4" action="{{route('feature.update',[$feature->id])}}" method='post'>
+    <form class="row gy-4" action="{{route('category.update',[$category->id])}}" method='post'>
         @csrf
         @method('put')
         <div class="col-md-6">
             <label class="form-label">عنوان</label>
-            <input name="title"value='{{$feature->title}}' type="text" class="form-control" />
+            <input name="title"value='{{$category->title}}' type="text" class="form-control" />
             <div class="form-text text-danger ">@error('title'){{$message}}@enderror</div>
         </div>
         <div class="col-md-3">
-            <label class="form-label">متن </label>
-            <input name="text" value='{{$feature->text}}'type="text" class="form-control" />
-            <div class="form-text text-danger">@error('text') {{ $message }} @enderror</div>
-        </div>
-        <div class="col-md-3">
-            <label class="form-label"> ایکون</label>
-            <input name="icon" value='{{$feature->icon}}'type="text" class="form-control" />
-            <div class="form-text text-danger">@error('icon') {{ $message }} @enderror</div>
+           
+
+            <label for="TF" class="form-label">وضعیت </label>
+                <select id="TF" name="status">
+                <option value="1"> فعال </option>
+                <option value="0">غیر فعال </option>
+                </select>
         </div>
 
 

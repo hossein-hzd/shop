@@ -14,6 +14,7 @@
                 <tr>
                     <th>تصویر</th>
                     <th>نام</th>
+                    <th>دسته بندی</th>
                     <th> قیمت</th>
                     <th>تعداد</th>
                     <th>وضعیت</th>
@@ -25,12 +26,14 @@
                 <tr>
                     <td><img width="90" height='90' class="rounded" src="{{asset("images/".$product->image)}}" ></td>
                     <td>{{ $product->name}}</td>
+                    <td>{{ "همبرگرر"}}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->number }}</td>
                     <td class="btn btn-sm btn-{{ $product->status?'primary':'danger' }}  mt-4">{{ $product->status?'موجود است':'تمام شده' }}</td>
 
                     <td>
                         <div class="d-flex">
+                           <a href="{{route('product.edit',[$product->id])}}"><button  class="btn btn-sm btn-outline-info me-2">نمایش</button></a>
                            <a href="{{route('product.edit',[$product->id])}}"><button  class="btn btn-sm btn-outline-info me-2">ویرایش</button></a>
                            <a href="{{route('product.delete',[$product->id])}}"><button  class="btn btn-sm btn-danger">حذف</button></a>
                         </div>

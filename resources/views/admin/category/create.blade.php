@@ -22,19 +22,17 @@
 
         </div>
         <div class="col-md-3">
-            <label class="form-label"> متن</label>
-            <input name="text" value='{{old('text')}}'type="text" class="form-control" />
-            <div class="form-text text-danger">@error('text') {{ $message }} @enderror</div>
-        </div>
-        <div class="col-md-3">
-            <label class="form-label">ایکون </label>
-            <input name="icon" value='{{old('icon')}}'type="text" class="form-control" />
-            <div class="form-text text-danger">@error('icon') {{ $message }} @enderror</div>
+
+            <label for="TF" class="form-label">وضعیت </label>
+                <select id="TF" name="status">
+                <option value="1"> فعال </option>
+                <option value="0">غیر فعال </option>
+                </select>
         </div>
 
         <div>
             <button type="submit" class="btn btn-outline-dark mt-3">
-                ایجاد ویژگی
+                 ایجاد گروهبندی
             </button>
         </div>
     </form>
