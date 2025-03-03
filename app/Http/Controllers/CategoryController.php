@@ -56,4 +56,6 @@ class CategoryController extends Controller
          $category=Category::all()->find($id)->delete();
          return redirect()->route('category.index');
       }
+
+    
 }

@@ -267,7 +267,15 @@ a:focus {
 .user_option .btn-auth:hover {
   background-color: #e69c00;
 }
-
+.btn-logout{display: inline-block;
+    padding: 8px 30px;
+    background-color: #ce1a29;
+    color: #ffffff;
+    border-radius: 45px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: none;
+    text-decoration: none}
 .btn-auth {
   display: inline-block;
   padding: 8px 30px;

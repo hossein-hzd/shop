@@ -19,5 +19,76 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
+        <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+
 
 </head>
+<header  class="bg-black header_section">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+                <span>
+                    webprog.io
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item {{request()->is('h')? 'active':''}}">
+                        <a class="nav-link" href="{{route('home.index')}}">صفحه اصلی</a>
+                    </li>
+                    <li class="nav-item {{request()->is('product/menu')? 'active':''}}">
+                        <a class="nav-link" href="{{route('product.menu')}}">منو</a>
+                    </li>
+                    <li class="nav-item {{request()->is('aboutpage')? 'active':''}}">
+                        <a class="nav-link" href="{{route('about.page')}}">درباره ما</a>
+                    </li>
+                    <li class="nav-item {{request()->is('contactpage')? 'active':''}} ">
+                        <a class="nav-link" href="{{route('contact.page')}}">تماس باما</a>
+                    </li>
+                </ul>
+                <div class="user_option">
+                    @auth
+
+                       <a class="cart_link position-relative" href="{{route('cart.index')}}">
+                        <i class="bi bi-cart-fill text-white fs-5"></i>
+                        <span class="position-absolute top-0 translate-middle badge rounded-pill">
+                            @php
+                                $x = session()->get('cart');//
+                            @endphp
+                            {{isset($x)?count($x):'0';}}
+
+                        </span>
+                    </a>
+
+                    @endauth
+
+                    @guest
+
+                    <a href="{{route('login.index')}}" class="btn-auth">
+                        ورود
+                    </a>
+                    @endguest
+                    @auth
+                    <a href="{{route('profile.index')}}" class="btn-auth">
+                        پروفایل
+                    </a>
+                     <a style="color:black" href="#" class="btn-auth">
+
+                   {{Illuminate\Support\Facades\Auth::user()->name}}
+
+                    </a>
+                        <a class="btn-logout" href="{{route('logout')}}">خروج</a>
+                    @endauth
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+

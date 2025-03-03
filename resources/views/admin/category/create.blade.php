@@ -13,11 +13,12 @@
             {{-- <div id="chartdiv"></div> --}}
 
 
+    {{-- <form class="row gy-4" action="{{route('category.store')}}" method='post'> --}}
     <form class="row gy-4" action="{{route('category.store')}}" method='post'>
         @csrf
         <div class="col-md-6">
-            <label class="form-label">عنوان</label>
-            <input name="title"value='{{old('title')}}' type="text" class="form-control" />
+            <label class="form-label" for="title">عنوان</label>
+            <input name="title" id="title" value='{{old('title')}}' type="text" class="form-control" />
             <div class="form-text text-danger ">@error('title'){{$message}}@enderror</div>
 
         </div>
@@ -31,12 +32,14 @@
         </div>
 
         <div>
-            <button type="submit" class="btn btn-outline-dark mt-3">
+
+            <button id="ja" type="submit" class="btn btn-outline-dark mt-3">
                  ایجاد گروهبندی
             </button>
         </div>
     </form>
 </main>
+
 </body>
 </html>
 @endsection

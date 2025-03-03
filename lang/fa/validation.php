@@ -115,6 +115,7 @@ return [
     'attributes'           => [
         'link address'           => 'ادرس لینک',
         'number'           => 'تعداد ',
+        'image'           => 'تصویر',
         'name'                  => 'نام',
         'username'              => 'نام کاربری',
         'email'                 => 'ایمیل',
@@ -166,6 +167,7 @@ return [
         'slug'              => 'اسلاگ',
         'quantity'          => 'تعداد',
         'primary_image'     => 'تصویر اصلی',
+        'images'     => 'تصاویر ',
     ],
 
 ];

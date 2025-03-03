@@ -6,6 +6,7 @@
         @include('adminlayout.sidebar')
 
 @yield('content')
+@yield('script')
 
 @include('adminlayout.footer')
 

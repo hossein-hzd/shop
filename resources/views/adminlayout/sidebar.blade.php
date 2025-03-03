@@ -40,13 +40,19 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link {{request()->is('copun*')? 'active':''}}" href="{{route('copun.index')}}">
                             <i class="bi bi-percent me-2"></i>
                             تخفیف ها
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-phone me-2"></i>
+                            تماس با ما
+                        </a>
+                    </li>
                     <li class="nav-item dropdown-center">
-                        <a class="nav-link dropdown-toggle {{request()->is('slider*')? 'active':''}}" href="#" role="button" aria-expanded="true" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle {{request()->is('slider*')||request()->is('feature*')||request()->is('about*')? 'active':''}}" href="#" role="button" aria-expanded="true" data-bs-toggle="dropdown">
                             <i class="bi bi-gear  me-2"></i>
                             تنظیمات سایت
                         </a>
@@ -58,7 +64,7 @@
                                 <a class="dropdown-item" href="{{route('feature.index')}}">بخش ویژگی ها</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">بخش درباره ما</a>
+                                <a class="dropdown-item" href="{{route('about.index')}}">بخش درباره ما</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#">بخش فوتر</a>
