@@ -11,6 +11,7 @@ class CopunController extends Controller
     public function index()
     {
         $copuns = Copun::all();
+        // loc
         return view('admin.copun.index', compact('copuns'));
     }
     public function create()
