@@ -96,7 +96,7 @@
                                 </table>
                             </div>
                             <a href='{{ route('cart.remove') }}'><button class="btn btn-primary mb-4">پاک کردن سبد
-                                   ط خرید</button></a>
+                                    خرید</button></a>
                         </div>
                     </div>
                     <div class="row mt-4">
