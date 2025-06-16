@@ -31,7 +31,7 @@ class SliderController extends Controller
 
         $id->delete();
 
-        return redirect()->route('slider.index');
+        return redirect()->route('slider.index')->with('success', 'okkkk');
 
     }
     public function store(Request $request){

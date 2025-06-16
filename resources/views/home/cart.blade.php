@@ -159,7 +159,7 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <button class="user_option btn-auth mt-4">پرداخت</button>
+                                    <a href="{{route('send')}}" >   <button  class="user_option btn-auth mt-4">پرداخت</button></a>
                                 </div>
                             </div>
                         </div>

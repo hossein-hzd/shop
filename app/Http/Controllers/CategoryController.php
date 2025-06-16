@@ -29,7 +29,7 @@ class CategoryController extends Controller
              'status'=>$request->status,
          ]);
 
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')->with('success','دسته بندی ساخته شد');
      }
      public function edit($id){
         $category=Category::all()->find($id);
@@ -50,12 +50,12 @@ class CategoryController extends Controller
          'status'=> $request->status,
 
         ]);
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')->with('error', 'دسته بندی تازه شد');
       }
       public function delete($id){
          $category=Category::all()->find($id)->delete();
-         return redirect()->route('category.index');
+         return redirect()->route('category.index')->with('warning', 'دسته بندی حذف شد');
       }
 
-    
+
 }

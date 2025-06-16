@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index(){
       $sliders=Slider::all();
       $features=Feature::all();
-            
+
 
       return view('home.index',compact('sliders','features'));
     }

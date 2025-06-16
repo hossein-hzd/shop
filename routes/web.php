@@ -8,15 +8,20 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CopunController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\WishController;
 use App\Models\Contact;
 use App\Models\product;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\Console\Logger\ConsoleLogger;
+
+/////payment//////
+Route::get('/payment', [PaymentController::class, 'send'])->name('send');
+
 
 //////login
 Route::get('/login',[AuthController::class,'login'])->name('login.index');
